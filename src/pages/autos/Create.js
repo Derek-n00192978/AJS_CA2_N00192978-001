@@ -2,14 +2,13 @@ import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import TextField  from "@mui/material/TextField";
-import InputLabel  from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+
+import Button from '@mui/material/Button'; 
 
 
 const Create = () => {
     const [form, setForm] = useState ({});
+    const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
     const handleForm = (e) => {
@@ -24,18 +23,33 @@ const Create = () => {
         }));
         
     };
+    
+    const isRequired = (fields) => {
+        let error = false;
+
+        fields.forEach(field => {
+            if(!form[field]){
+                error = true;
+                setErrors(prevState => ({
+                    ...prevState,
+                    [field]: {
+                        message: `${field} is required!!!`
+                    }
+                }));
+            }
+        })
+    };
     const submitform = () => {
         let token = localStorage.getItem('token');
-        axios.post('https://festivals-api.vercel.app/api/festivals', {
-
-        }, {
+        if(!isRequired(['name', 'location', 'phone']))
+        axios.post('https://festivals-api.vercel.app/api/festivals', form, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
         })
              .then(response => {
                 console.log(response.data);
-                //navigate('/');
+                navigate('/auto_parts');
              })
              .catch(err=> {
                 console.log(err.response.data)
@@ -47,14 +61,25 @@ const Create = () => {
         <>
             <h2>Create Page</h2>
             <div className='form-group'>
-            <TextField variant='filled' label='Name' name='name' onChange={handleForm}/> 
+            <TextField 
+                variant='filled' 
+                label='Name' 
+                name='name' 
+                onChange={handleForm}
+                error={errors.model}/> 
             </div>
             <div className='form-group'>
-            <TextField variant='filled' label='Location' name='location' onChange={handleForm}/> 
+            <TextField 
+                variant='filled' 
+                label='Location' 
+                name='location' 
+                onChange={handleForm}
+                error={errors.model}/> 
             </div>
             <div className='form-group'>
             <TextField variant='filled' label='Phone' name='phone' onChange={handleForm}/> 
             </div>
+            <Button onClick={submitform}variant="contained">Submit</Button>
         </>
     );
 

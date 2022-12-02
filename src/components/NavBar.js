@@ -13,12 +13,20 @@ const NavBar = (props) => {
         navigate('/')
     }
     const [anchorEl, setAnchorEl] = useState(null);
+    const [anchorEl1, setAnchorEl1] = useState(null);
     const open = Boolean(anchorEl);
+    const open1 = Boolean(anchorEl1);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
+    const handleClick1 = (event) => {
+        setAnchorEl1(event.currentTarget);
+    };
     const handleClose = () => {
         setAnchorEl(null);
+    };
+    const handleClose1 = () => {
+        setAnchorEl1(null);
     };
     return (        
         <Grid item xs={12}>
@@ -32,8 +40,8 @@ const NavBar = (props) => {
                     ) : ""} 
 
                     <Button
-                    id="basic-button"
-                    aria-controls={open ? 'basic-menu' : undefined}
+                    id="button1"
+                    aria-controls={open ? 'menu2' : undefined}
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                     onClick={handleClick}
@@ -41,37 +49,37 @@ const NavBar = (props) => {
                         Cars
                     </Button>
                     <Menu
-                        id="basic-menu"
+                        id="menu1"
                         anchorEl={anchorEl}
                         open={open}
                         onClose={handleClose}
                         MenuListProps={{
-                        'aria-labelledby': 'basic-button',
+                        'aria-labelledby': 'button1',
                         }}
                     >
-                        <MenuItem component={Link} to='/cars' onClick={handleClose}>All</MenuItem>
+                        <MenuItem component={Link} to='/cars/' onClick={handleClose}>All</MenuItem>
                         <MenuItem component={Link} to='/cars/create' onClick={handleClose}>Create</MenuItem>
                     </Menu>
                     <Button
-                        id="basic-button"
-                        aria-controls={open ? 'basic-menu' : undefined}
+                        id="button2"
+                        aria-controls={open ? 'menu2' : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? 'true' : undefined}
-                        onClick={handleClick}
+                        onClick={handleClick1}
                     >
                         Auto Parts
                     </Button>
                     <Menu
-                        id="basic-menu"
-                        anchorEl={anchorEl}
-                        open={open}
-                        onClose={handleClose}
+                        id="menu2"
+                        anchorEl={anchorEl1}
+                        open={open1}
+                        onClose={handleClose1}
                         MenuListProps={{
-                        'aria-labelledby': 'basic-button',
+                        'aria-labelledby': 'button2',
                         }}
                     >
-                        <MenuItem component={Link} to='/auto_parts' onClick={handleClose}>All</MenuItem>
-                        <MenuItem component={Link} to='/auto_parts/create' onClick={handleClose}>Create</MenuItem>
+                        <MenuItem component={Link} to='/auto_parts/' onClick={handleClose1}>All</MenuItem>
+                        <MenuItem component={Link} to='/auto_parts/create' onClick={handleClose1}>Create</MenuItem>
                     </Menu>         
         </Grid>       
     )

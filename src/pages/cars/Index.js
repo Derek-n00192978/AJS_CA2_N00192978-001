@@ -3,11 +3,9 @@ import { useState, useEffect } from 'react';
 
 import CarCard from '../../components/CarCard';
 
-
 const Index = (props) => {
     const [ cars, setCars ] = useState(null);
     
-
     useEffect(() => {
         axios.get('http://localhost:3001/api/cars')
              .then((response) =>{
@@ -21,9 +19,8 @@ const Index = (props) => {
     }, []);
     if(!cars) return 'Loading...';
 
-
-    const carsList = cars.map((car) => {
-        return <CarCard car={car} authenticated={props.authenticated}/>;
+    const carsList =cars.map((car) => {
+        return <CarCard car={car} authenticated={props.authenticated} />;
     })
     return (
         <>

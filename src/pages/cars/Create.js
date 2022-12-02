@@ -6,10 +6,13 @@ import InputLabel  from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import Button from '@mui/material/Button'; 
+import FormHelperText from "@mui/material/FormHelperText";
 
 
 const Create = () => {
     const [form, setForm] = useState ({});
+    const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
     const handleForm = (e) => {
@@ -24,22 +27,38 @@ const Create = () => {
         }));
         
     };
+
+    const isRequired = (fields) => {
+        let error = false;
+
+        fields.forEach(field => {
+            if(!form[field]){
+                error = true;
+                setErrors(prevState => ({
+                    ...prevState,
+                    [field]: {
+                        message: `${field} is required!!!`
+                    }
+                }));
+            }
+        })
+    };
     const submitform = () => {
         let token = localStorage.getItem('token');
-        axios.post('http://localhost:3001/api/cars', {
-
-        }, {
+        if(!isRequired(['make', 'model', 'series', 'year', 'reg_plate', 'engine_cap', 'fuel', 'colour', 'transmission', 'body_type']))
+        axios.post('http://localhost:3001/api/cars', form, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
         })
              .then(response => {
                 console.log(response.data);
-                //navigate('/');
+                navigate('/cars');
              })
              .catch(err=> {
                 console.log(err.response.data)
                 console.error(err);
+                setErrors(err.response.data.errors);
              });  
     }
 
@@ -47,27 +66,76 @@ const Create = () => {
         <>
             <h2>Create Page</h2>
             <div className='form-group'>
-            <TextField variant='filled' label='Make' name='make' onChange={handleForm}/> 
+            <TextField 
+                variant='filled' 
+                label='Make' 
+                name='make' 
+                onChange={handleForm}
+                error={errors.make}
+                
+                /> 
             </div>
             <div className='form-group'>
-            <TextField variant='filled' label='Model' name='model' onChange={handleForm}/> 
+            <TextField 
+                variant='filled' 
+                label='Model' 
+                name='model' 
+                onChange={handleForm}
+                error={errors.model}
+                
+                /> 
             </div>
             <div className='form-group'>
-            <TextField variant='filled' label='Series' name='series' onChange={handleForm}/> 
+            <TextField 
+                variant='filled' 
+                label='Series' 
+                name='series' 
+                onChange={handleForm}
+                error={errors.series}
+                
+                /> 
             </div>
             <div className='form-group'>
-            <TextField variant='filled' label='Year' name='year' onChange={handleForm}/> 
+            <TextField 
+                variant='filled' 
+                label='Year' 
+                name='year' 
+                onChange={handleForm}
+                error={errors.year}
+                
+                /> 
             </div>
             <div className='form-group'>
-            <TextField variant='filled' label='Reg' name='reg_plate' onChange={handleForm}/> 
+            <TextField 
+                variant='filled' 
+                label='Reg' 
+                name='reg_plate' 
+                onChange={handleForm}
+                error={errors.reg_plate}
+                
+                /> 
             </div>
             <div className='form-group'>
-            <TextField variant='filled' label='Engine Capacity' name='engine_cap' onChange={handleForm}/> 
+            <TextField 
+                variant='filled' 
+                label='Engine Capacity' 
+                name='engine_cap' 
+                onChange={handleForm}
+                error={errors.engine_cap}
+                
+                /> 
             </div>
             <div className="form-group">
                 <FormControl variant="filled" fullWidth>
-                <InputLabel id="fuel-select">city</InputLabel>
-                <Select labelId='fuel-select' name="fuel" label="fuel" onChange={handleForm}>
+                <InputLabel id="fuel-select">Fuel</InputLabel>
+                <Select 
+                    labelId='fuel-select' 
+                    name="fuel" 
+                    label="fuel" 
+                    onChange={handleForm}
+                    error={errors.fuel}
+                    
+                    >
                     <MenuItem value='Petrol'>Petrol</MenuItem>
                     <MenuItem value='Disel'>Disel</MenuItem>
                     <MenuItem value='Mild-Hybrid'>Mild-Hybrid</MenuItem>
@@ -77,12 +145,26 @@ const Create = () => {
                 </FormControl>
             </div>
             <div className='form-group'>
-            <TextField variant='filled' label='Colour' name='colour' onChange={handleForm}/> 
+            <TextField 
+                variant='filled' 
+                label='Colour' 
+                name='colour' 
+                onChange={handleForm}
+                error={errors.colour}
+                
+                /> 
             </div>
             <div className="form-group">
                 <FormControl variant="filled" fullWidth>
                 <InputLabel id="transmission-select">transmission</InputLabel>
-                <Select labelId='transmission-select' name="transmission" label="transmission" onChange={handleForm}>
+                <Select 
+                    labelId='transmission-select' 
+                    name="transmission" 
+                    label="transmission" 
+                    onChange={handleForm}
+                    error={errors.transmission}
+                    
+                    >
                     <MenuItem value='Manual'>Manual</MenuItem>
                     <MenuItem value='Automatic'>Automatic</MenuItem>
                     <MenuItem value='Flappy Paddle'>Flappy Paddle</MenuItem>
@@ -92,7 +174,14 @@ const Create = () => {
             <div className="form-group">
                 <FormControl variant="filled" fullWidth>
                 <InputLabel id="body-select">Body type</InputLabel>
-                <Select labelId='body-select' name="body_typr" label="body_type" onChange={handleForm}>
+                <Select 
+                    labelId='body-select' 
+                    name="body_type" 
+                    label="body_type" 
+                    onChange={handleForm}
+                    error={errors.body_type}
+                    
+                    >
                     <MenuItem value='2 door saloon'>2 Door Saloon</MenuItem>
                     <MenuItem value='4 door saloon'>4 Door Saloon</MenuItem>
                     <MenuItem value='3 door hatchback'>3 Door Hatchbach</MenuItem>
@@ -104,6 +193,7 @@ const Create = () => {
                 </Select>
                 </FormControl>
             </div>
+            <Button onClick={submitform}variant="contained">Submit</Button>
         </>
     );
 

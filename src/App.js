@@ -13,6 +13,7 @@ import Register from './pages/Register';
 import CarsIndex from './pages/cars/Index' 
 import CarsShow from './pages/cars/Show'
 import CarsCreate from './pages/cars/Create'
+import CarsEdit from './pages/cars/Edit'
 
 
 import AutosIndex from './pages/autos/Index' 
@@ -26,32 +27,34 @@ import PageNotFound from './pages/PageNotFound';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
-const App = () => {
-  const [authenticated, setAuthenticated] = useState(false);
-    //Setup Protected Routes
-    let protectedRoutes;
-  useEffect(() => {
-      if (localStorage.getItem('token')){
-          setAuthenticated(true);
-      }
-  }, []);
- 
 
-  const onAuthenticated = (auth, token) => {
-      setAuthenticated(auth);
-      if (auth){
-          localStorage.setItem('token', token);
-      }
-      else{
-          localStorage.removeItem('token');
-      }
-  };
+const App = () => {
+    const [authenticated, setAuthenticated] = useState(false);
+    
+    useEffect(() => {
+        if (localStorage.getItem('token')){
+            setAuthenticated(true);
+        }
+    }, []);
+    let protectedRoutes; 
+
+    const onAuthenticated = (auth, token) => {
+        setAuthenticated(auth);
+        if (auth){
+            localStorage.setItem('token', token);
+        }
+        else{
+            localStorage.removeItem('token');
+            
+        }
+    };
   if(authenticated){
     //Protected Route
     protectedRoutes = (
       <>
         <Route path='/cars/:id' element={<CarsShow/>} /> 
         <Route path='/cars/create' element={<CarsCreate/>} />
+        
         <Route path='/autos/:id' element={<AutosShow/>} />
         <Route path='/autos/create' element={<AutosCreate/>} />
       </>
@@ -65,10 +68,11 @@ const App = () => {
                 <Route path="/" element={<Home onAuthenticated={onAuthenticated} authenticated={authenticated} />} /> 
                 <Route path="/about" element={<About/>} />
                 <Route path="/contact" element={<Contact/>} />
-                <Route path="/cars" element={<CarsIndex />} />
-                <Route path="/auto_parts" element={<AutosIndex />} />
-                <Route path='/login' element={<Login/>} />
-                <Route path='/register' element={<Register/>} />                             
+                <Route path="/cars" element={<CarsIndex authenticated={authenticated} />} />
+                
+                <Route path="/auto_parts" element={<AutosIndex authenticated={authenticated} />} />
+                <Route path='/login' element={<Login onAuthenticated={onAuthenticated} authenticated={authenticated}/>} />
+                <Route path='/register' element={<Register onAuthenticated={onAuthenticated} authenticated={authenticated}/>} />                             
                 {protectedRoutes}
                 {/*Different route */}
                 <Route path='*' element={<PageNotFound/>} />

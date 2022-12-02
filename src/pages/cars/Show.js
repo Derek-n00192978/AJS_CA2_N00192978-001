@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+//mui card example
+
 import CarCard from "../../components/CarCard";
 
-const Show = () => {
+const Show = (props) => {
     const { id } = useParams();
     const [ car, setCar] = useState(null);
     let token = localStorage.getItem('token');
@@ -28,7 +30,7 @@ const Show = () => {
     if(!car) return "Loading...";
 
     return (
-        <CarCard car={car} />
+        <CarCard car={car} authenticated={props.authenticated}/>
     );
 };
 
