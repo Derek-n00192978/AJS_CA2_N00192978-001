@@ -51,6 +51,7 @@ const Create = () => {
              .catch(err=> {
                 console.log(err.response.data)
                 console.error(err);
+                setErrors(err.response.data.errors);
              });  
     }
 

@@ -1,16 +1,14 @@
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState} from 'react'
-import AutoCard from "../../components/AutoCard";
-
-
-
+import AutoDisplay from "../../components/AutoDisplay";
 
 const Show = (props) => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [ auto_part, setAuto] = useState(null);
     let token = localStorage.getItem('token');
+    
     const deleteCallback = (id) => {
       navigate('/auto_parts');
   }
@@ -33,7 +31,7 @@ const Show = (props) => {
     if(!auto_part) return "loading...";
     
     return (
-      <AutoCard auto_part={auto_part} authenticated={props.authenticated} callback={deleteCallback}/>
+      <AutoDisplay auto_part={auto_part} authenticated={props.authenticated} callback={deleteCallback}/>
     )
 }
 export default Show;

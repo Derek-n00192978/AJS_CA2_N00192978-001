@@ -58,6 +58,8 @@ const App = () => {
         <Route path='/cars/create' element={<CarsCreate/>} />
         <Route path='/cars/:id/edit' element={<CarsEdit/>}/>
         
+
+        
         <Route path='/auto_parts/:id' element={<AutosShow/>} />
         <Route path='/autos_parts/create' element={<AutosCreate/>} />
         <Route path='/auto_parts/:id/edit' element={<Auto_partsEdit/>}/>
@@ -73,6 +75,7 @@ const App = () => {
                 <Route path="/about" element={<About/>} />
                 <Route path="/contact" element={<Contact/>} />
                 <Route path="/cars" element={<CarsIndex authenticated={authenticated} />} />
+                
                 
                 <Route path="/auto_parts" element={<AutosIndex authenticated={authenticated} />} />
                 <Route path='/login' element={<Login onAuthenticated={onAuthenticated} authenticated={authenticated}/>} />

@@ -41,7 +41,7 @@ const NavBar = (props) => {
 
                     <Button
                     id="button1"
-                    aria-controls={open ? 'menu2' : undefined}
+                    aria-controls={open ? 'menu1' : undefined}
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                     onClick={handleClick}

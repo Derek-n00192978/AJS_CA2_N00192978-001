@@ -1,9 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-//mui card example
-
-import CarCard from "../../components/CarCard";
+import CarDisplay from "../../components/CarDisplay";
 
 const Show = (props) => {
     const { id } = useParams();
@@ -35,7 +33,7 @@ const Show = (props) => {
     if(!car) return "Loading...";
 
     return (
-        <CarCard car={car} authenticated={props.authenticated} callback={deleteCallback}/>
+        <CarDisplay car={car} authenticated={props.authenticated} callback={deleteCallback}/>
     );
 };
 
