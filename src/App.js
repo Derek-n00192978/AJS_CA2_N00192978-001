@@ -13,12 +13,12 @@ import Register from './pages/Register';
 import CarsIndex from './pages/cars/Index' 
 import CarsShow from './pages/cars/Show'
 import CarsCreate from './pages/cars/Create'
-import CarsEdit from './pages/cars/Edit'
 
 
-import AutosIndex from './pages/autos/Index' 
-import AutosShow from './pages/autos/Show'
-import AutosCreate from './pages/autos/Create'
+
+import AutosIndex from './pages/auto_parts/Index' 
+import AutosShow from './pages/auto_parts/Show'
+import AutosCreate from './pages/auto_parts/Create'
 
 //Page Not Found
 import PageNotFound from './pages/PageNotFound';
@@ -55,8 +55,8 @@ const App = () => {
         <Route path='/cars/:id' element={<CarsShow/>} /> 
         <Route path='/cars/create' element={<CarsCreate/>} />
         
-        <Route path='/autos/:id' element={<AutosShow/>} />
-        <Route path='/autos/create' element={<AutosCreate/>} />
+        <Route path='/auto_parts/:id' element={<AutosShow/>} />
+        <Route path='/autos_parts/create' element={<AutosCreate/>} />
       </>
     )
   }

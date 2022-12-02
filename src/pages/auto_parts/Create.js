@@ -42,7 +42,7 @@ const Create = () => {
     const submitform = () => {
         let token = localStorage.getItem('token');
         if(!isRequired(['name', 'location', 'phone']))
-        axios.post('https://festivals-api.vercel.app/api/festivals', form, {
+        axios.post('http://localhost:3001/api/auto_parts', form, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
