@@ -19,8 +19,16 @@ const Index = (props) => {
     
     if(!auto_parts) return 'Loading...';
 
+    const deleteCallback = (id) => {
+        let auto_partsNew = auto_parts.filter(auto_part => {
+            return auto_part._id !== id;
+        });
+
+        setAuto_parts(auto_partsNew);
+    };
+
     const auto_partsList =auto_parts.map((auto_part) => {
-        return <AutoCard auto_part={auto_part} authenticated={props.authenticated}/>;
+        return <AutoCard key={auto_part._id} auto_part={auto_part} authenticated={props.authenticated} callback={deleteCallback}/>;
     })
     return (
         <>

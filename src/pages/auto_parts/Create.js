@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import TextField  from "@mui/material/TextField";
-
 import Button from '@mui/material/Button'; 
 
 
@@ -14,9 +13,7 @@ const Create = () => {
     const handleForm = (e) => {
         let name = e.target.name;
         let value = e.target.value;
-        
-
-       
+           
         setForm(prevState =>({
             ...prevState,
             [name]: value
@@ -66,7 +63,7 @@ const Create = () => {
                 label='Name' 
                 name='name' 
                 onChange={handleForm}
-                error={errors.model}/> 
+                error={errors.name}/> 
             </div>
             <div className='form-group'>
             <TextField 
@@ -74,10 +71,15 @@ const Create = () => {
                 label='Location' 
                 name='location' 
                 onChange={handleForm}
-                error={errors.model}/> 
+                error={errors.location}/> 
             </div>
             <div className='form-group'>
-            <TextField variant='filled' label='Phone' name='phone' onChange={handleForm}/> 
+            <TextField 
+                variant='filled' 
+                label='Phone' 
+                name='phone' 
+                onChange={handleForm}
+                error={errors.phone}/>
             </div>
             <Button onClick={submitform}variant="contained">Submit</Button>
         </>

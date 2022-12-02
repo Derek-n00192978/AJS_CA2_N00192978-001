@@ -12,13 +12,14 @@ import Button from '@mui/material/Button';
 
 
 const Edit = () => {
+    const [ car, setCar] = useState(null);
     const [form, setForm] = useState ({});
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
-
     const { id } = useParams();
-    const [ car, setCar] = useState(null);
+    
     let token = localStorage.getItem('token');
+
     useEffect(() => {
     axios.put(`/cars/${id}`, {
     headers: {
@@ -41,9 +42,6 @@ const Edit = () => {
         let name = e.target.name;
         let value = e.target.value;
 
-             
-
-       
         setForm(prevState =>({
             ...prevState,
             [name]: value
@@ -67,7 +65,7 @@ const Edit = () => {
         })
     };
     const submitform = () => {
-        let token = localStorage.getItem('token');
+        
         if(!isRequired(['make', 'model', 'series', 'year', 'reg_plate', 'engine_cap', 'fuel', 'colour', 'transmission', 'body_type']))
         axios.post('http://localhost:3001/api/cars', form, {
             headers: {

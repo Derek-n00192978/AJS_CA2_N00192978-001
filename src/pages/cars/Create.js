@@ -18,9 +18,7 @@ const Create = () => {
     const handleForm = (e) => {
         let name = e.target.name;
         let value = e.target.value;
-        
-
-       
+               
         setForm(prevState =>({
             ...prevState,
             [name]: value

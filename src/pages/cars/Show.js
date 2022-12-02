@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 //mui card example
@@ -7,8 +7,13 @@ import CarCard from "../../components/CarCard";
 
 const Show = (props) => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [ car, setCar] = useState(null);
     let token = localStorage.getItem('token');
+
+    const deleteCallback = (id) => {
+        navigate('/cars');
+    };
 
     useEffect(() => {
         axios.get(`http://localhost:3001/api/cars/${id}`, {
@@ -30,7 +35,7 @@ const Show = (props) => {
     if(!car) return "Loading...";
 
     return (
-        <CarCard car={car} authenticated={props.authenticated}/>
+        <CarCard car={car} authenticated={props.authenticated} callback={deleteCallback}/>
     );
 };
 
