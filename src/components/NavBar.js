@@ -8,10 +8,11 @@ import MenuItem from '@mui/material/MenuItem';
 
 const NavBar = (props) => {
     const navigate = useNavigate()
+
     const logout = ()=> {
         props.onAuthenticated(false);
         navigate('/')
-    }
+    };
     const [anchorEl, setAnchorEl] = useState(null);
     const [anchorEl1, setAnchorEl1] = useState(null);
     const open = Boolean(anchorEl);

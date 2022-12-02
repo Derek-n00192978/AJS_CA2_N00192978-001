@@ -33,7 +33,7 @@ const Show = (props) => {
     if(!car) return "Loading...";
 
     return (
-        <CarDisplay car={car} authenticated={props.authenticated} callback={deleteCallback}/>
+        <CarDisplay key={car.id} car={car} authenticated={props.authenticated} callback={deleteCallback}/>
     );
 };
 

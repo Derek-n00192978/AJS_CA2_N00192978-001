@@ -29,7 +29,7 @@ const Index = (props) => {
 
     const carsList =cars.map((car) => {
         return <CarCard key={car.id} car={car} authenticated={props.authenticated} callback={deleteCallback}/>;
-    })
+    });
     return (
         <>
         <h2>Cars</h2>

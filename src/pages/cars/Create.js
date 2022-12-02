@@ -7,7 +7,7 @@ import FormControl from "@mui/material/FormControl";
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button'; 
-import FormHelperText from "@mui/material/FormHelperText";
+//`import FormHelperText from "@mui/material/FormHelperText";
 
 
 const Create = () => {
@@ -70,7 +70,7 @@ const Create = () => {
                 name='make' 
                 onChange={handleForm}
                 error={errors.make}
-                
+                helperText={errors.make?.message}
                 /> 
             </div>
             <div className='form-group'>
@@ -80,7 +80,7 @@ const Create = () => {
                 name='model' 
                 onChange={handleForm}
                 error={errors.model}
-                
+                helperText={errors.model?.message}
                 /> 
             </div>
             <div className='form-group'>
@@ -90,7 +90,7 @@ const Create = () => {
                 name='series' 
                 onChange={handleForm}
                 error={errors.series}
-                
+                helperText={errors.series?.message}
                 /> 
             </div>
             <div className='form-group'>
@@ -100,7 +100,7 @@ const Create = () => {
                 name='year' 
                 onChange={handleForm}
                 error={errors.year}
-                
+                helperText={errors.year?.message}
                 /> 
             </div>
             <div className='form-group'>
@@ -110,7 +110,7 @@ const Create = () => {
                 name='reg_plate' 
                 onChange={handleForm}
                 error={errors.reg_plate}
-                
+                helperText={errors.reg_plate?.message}
                 /> 
             </div>
             <div className='form-group'>
@@ -120,7 +120,7 @@ const Create = () => {
                 name='engine_cap' 
                 onChange={handleForm}
                 error={errors.engine_cap}
-                
+                helperText={errors.engine_cap?.message}
                 /> 
             </div>
             <div className="form-group">
@@ -132,7 +132,7 @@ const Create = () => {
                     label="fuel" 
                     onChange={handleForm}
                     error={errors.fuel}
-                    
+                    helperText={errors.fuel?.message}
                     >
                     <MenuItem value='Petrol'>Petrol</MenuItem>
                     <MenuItem value='Disel'>Disel</MenuItem>
@@ -149,7 +149,7 @@ const Create = () => {
                 name='colour' 
                 onChange={handleForm}
                 error={errors.colour}
-                
+                helperText={errors.colour?.message}
                 /> 
             </div>
             <div className="form-group">
@@ -161,7 +161,7 @@ const Create = () => {
                     label="transmission" 
                     onChange={handleForm}
                     error={errors.transmission}
-                    
+                    helperText={errors.transmission?.message}
                     >
                     <MenuItem value='Manual'>Manual</MenuItem>
                     <MenuItem value='Automatic'>Automatic</MenuItem>
@@ -178,7 +178,7 @@ const Create = () => {
                     label="body_type" 
                     onChange={handleForm}
                     error={errors.body_type}
-                    
+                    helperText={errors.body_type?.message}
                     >
                     <MenuItem value='2 door saloon'>2 Door Saloon</MenuItem>
                     <MenuItem value='4 door saloon'>4 Door Saloon</MenuItem>

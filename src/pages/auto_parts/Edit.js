@@ -66,7 +66,7 @@ const Edit = () => {
 
     const submitForm = () => {
 
-        if(!isRequired(['title', 'description', 'city', 'start_date'])){
+        if(!isRequired(['name', 'location', 'phone', 'web_address'])){
 
             axios.put(`/auto_parts/${id}`, form, {
                     headers: {

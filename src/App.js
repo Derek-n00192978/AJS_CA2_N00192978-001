@@ -17,9 +17,9 @@ import CarsEdit from './pages/cars/Edit'
 
 
 
-import AutosIndex from './pages/auto_parts/Index' 
-import AutosShow from './pages/auto_parts/Show'
-import AutosCreate from './pages/auto_parts/Create'
+import Auto_partsIndex from './pages/auto_parts/Index' 
+import Auto_partsShow from './pages/auto_parts/Show'
+import Auto_partsCreate from './pages/auto_parts/Create'
 import Auto_partsEdit from './pages/auto_parts/Edit'
 
 //Page Not Found
@@ -57,11 +57,9 @@ const App = () => {
         <Route path='/cars/:id' element={<CarsShow/>} /> 
         <Route path='/cars/create' element={<CarsCreate/>} />
         <Route path='/cars/:id/edit' element={<CarsEdit/>}/>
-        
-
-        
-        <Route path='/auto_parts/:id' element={<AutosShow/>} />
-        <Route path='/autos_parts/create' element={<AutosCreate/>} />
+             
+        <Route path='/auto_parts/:id' element={<Auto_partsShow/>} />
+        <Route path='/autos_parts/create' element={<Auto_partsCreate/>} />
         <Route path='/auto_parts/:id/edit' element={<Auto_partsEdit/>}/>
       </>
     )
@@ -77,7 +75,7 @@ const App = () => {
                 <Route path="/cars" element={<CarsIndex authenticated={authenticated} />} />
                 
                 
-                <Route path="/auto_parts" element={<AutosIndex authenticated={authenticated} />} />
+                <Route path="/auto_parts" element={<Auto_partsIndex authenticated={authenticated} />} />
                 <Route path='/login' element={<Login onAuthenticated={onAuthenticated} authenticated={authenticated}/>} />
                 <Route path='/register' element={<Register onAuthenticated={onAuthenticated} authenticated={authenticated}/>} />                             
                 {protectedRoutes}

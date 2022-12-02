@@ -6,7 +6,7 @@ import AutoDisplay from "../../components/AutoDisplay";
 const Show = (props) => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const [ auto_part, setAuto] = useState(null);
+    const [ auto_part, setAuto_part] = useState(null);
     let token = localStorage.getItem('token');
     
     const deleteCallback = (id) => {
@@ -20,7 +20,7 @@ const Show = (props) => {
     })
              .then((response) =>{
                 console.log(response.data);
-                setAuto(response.data);
+                setAuto_part(response.data);
                
              })
              .catch((err) => {
@@ -31,7 +31,7 @@ const Show = (props) => {
     if(!auto_part) return "loading...";
     
     return (
-      <AutoDisplay auto_part={auto_part} authenticated={props.authenticated} callback={deleteCallback}/>
-    )
-}
+      <AutoDisplay key={auto_part._id} auto_part={auto_part}  callback={deleteCallback}/>
+    );
+};
 export default Show;

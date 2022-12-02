@@ -13,10 +13,9 @@ const AutoDisplay = (props) => {
     
 
     if(props.authenticated){
-        web_address = <p><b>web_address:</b><Link to={`https://autocare.ie`}>{props.auto_part.name}</Link></p>
-        
-        
+        web_address = <p><b>web_address:</b><Link to={`https://autocare.ie`}>{props.auto_part.name}</Link></p>;       
     }
+    
     return (
         <div>
             {name} 
@@ -32,8 +31,8 @@ const AutoDisplay = (props) => {
             >
                 Edit
             </Button>
-            <DeleteBtn id={props.auto_part._id} resource='cars' callback={props.callback} />   
+            <DeleteBtn id={props.auto_part._id} resource='auto_parts' callback={props.callback} />   
         </div>
-    )
+    );
 };
 export default AutoDisplay;
