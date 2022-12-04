@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 
+//react-bootstrap card
+import Card from 'react-bootstrap/Card';
+
 import DeleteBtn from './DeleteBtn';
 const CarDisplay = (props) => {
     let make = <p><b>Make:</b> {props.car.make}</p>
@@ -30,29 +33,38 @@ const CarDisplay = (props) => {
             }
     return (
         <div>
-      
-        <p><b>Make:</b>{props.car.make} <b>Model:</b>{props.car.model} <b>Series:</b>{props.car.series}</p>
-        <p></p>
-        <p></p>
-        <p><b>Year:</b>{props.car.year} <b>Reg_Plate:</b>{props.car.reg_plate}</p>
-        <p></p>
-        <p><b>Engine Capicaty:</b>{props.car.engine_cap} <b>Fuel Type:</b>{props.car.fuel}</p>
-        <p></p>
-        <p><b>Colour:</b>{props.car.colour} <b>Transmission:</b>{props.car.transmission}</p>
-        <p></p>
-        <p><b>Body Type:</b>{props.car.body_type}</p>
-        <p><b>Image</b>{props.car.image_path}</p>
-        <Button 
-                component={Link} 
-                to={`/cars/${props.car._id}/edit`}
-                //startIcon={<EditIcon />}
-                variant='outlined'
-            >
-                Edit
-            </Button>
-        <DeleteBtn id={props.car._id} resource='cars' callback={props.callback} />      
-    
-    </div>
+            {/*react bootstrap catd */}
+            <Card style={{ width: '18rem' }}>
+            <Card.Header text-align="center">{props.car.make}</Card.Header>
+                <Card.Img variant="top" src="../public/uploads/${props.car.image_path}" />
+            <Card.Body>
+                <Card.Title><p><b>Make:</b>{props.car.make} <b>Model:</b>{props.car.model} <b>Series:</b>{props.car.series}</p></Card.Title>
+                <Card.Text>
+                <p><b>Engine Capicaty:</b>{props.car.engine_cap} <b>Fuel Type:</b>{props.car.fuel}</p>
+                <p><b>Year:</b>{props.car.year} <b>Reg_Plate:</b>{props.car.reg_plate}</p>
+                <p><b>Colour:</b>{props.car.colour} <b>Transmission:</b>{props.car.transmission}</p>
+                <p></p>
+                <p><b>Body Type:</b>{props.car.body_type}</p>
+                <p><b>Image</b>{props.car.image_path}</p>
+                
+                </Card.Text>
+                <Button 
+                        component={Link} 
+                        to={`/cars/${props.car._id}/edit`}
+                        //startIcon={<EditIcon />}
+                        variant='outlined'
+                    >
+                        Edit
+                    </Button>
+                <DeleteBtn 
+                    id={props.car._id} 
+                    resource='cars' 
+                    callback={props.callback}
+                    variant="danger"
+                    /> 
+            </Card.Body>
+            </Card>      
+        </div>
     )
 };
 export default CarDisplay;

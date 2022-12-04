@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect} from 'react';
 
+import Table from 'react-bootstrap/Table';
+
 import AutoCard from '../../components/AutoCard';
 
 const Index = (props) => {
@@ -32,8 +34,45 @@ const Index = (props) => {
     })
     return (
         <>
-            <h1>All Auto</h1>
-            { auto_partsList }  
+ <div>
+      <Table responsive="sm">
+        <thead>
+          <tr>
+            <th>All Auto Centres</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{ auto_partsList }</td>
+          </tr>
+        </tbody>
+      </Table>
+      <Table responsive="md">
+        <thead>
+          <tr>
+            <th>All Auto Centers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{ auto_partsList }</td>
+         </tr>
+        </tbody>
+      </Table>
+      <Table responsive="lg">
+        <thead>
+          <tr>
+            <th>All Auto Centres</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{ auto_partsList }</td>
+          </tr>
+        </tbody>
+      </Table>
+      </div>
+            
         </>
     );
 };

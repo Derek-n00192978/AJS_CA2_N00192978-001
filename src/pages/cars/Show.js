@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import CarDisplay from "../../components/CarDisplay";
 
+
+
 const Show = (props) => {
     const { id } = useParams();
     const navigate = useNavigate();

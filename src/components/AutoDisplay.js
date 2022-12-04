@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 //import EditIcon from '@mui/icons-material/Edit';
 
+//react-bootstrap card
+import Card from 'react-bootstrap/Card';
+
 import DeleteBtn from './DeleteBtn';
 const AutoDisplay = (props) => {
     let name = <p><b>Name:</b> {props.auto_part.name}</p>
@@ -18,20 +21,33 @@ const AutoDisplay = (props) => {
     
     return (
         <div>
-            {name} 
-            {location}
-            {phone}
-            {web_address}
-            {image}
-            <Button 
-                component={Link} 
-                to={`/auto_parts/${props.auto_part._id}/edit`}
-                //startIcon={<EditIcon />}
-                variant='outlined'
-            >
+            <Card.Header><b>{name}</b></Card.Header>
+                <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" src="../public/uploads/${props.auto_parts.image_path}" name={image} />
+            <Card.Body>
+                <Card.Text>
+                    {name} 
+                    {location}
+                    {phone}
+                    <Card.Link href="https://autocare.ie">{web_address}</Card.Link>
+                </Card.Text>
+                <Button 
+                    component={Link} 
+                    to={`/auto_parts/${props.auto_part._id}/edit`}
+                    //startIcon={<EditIcon />}
+                    variant='outlined'
+                >
                 Edit
-            </Button>
-            <DeleteBtn id={props.auto_part._id} resource='auto_parts' callback={props.callback} />   
+                </Button>
+                    <DeleteBtn 
+                        id={props.auto_part._id} 
+                        resource='auto_parts' 
+                        callback={props.callback}
+                        variant="danger"
+                    />
+            </Card.Body>
+            </Card>
+            
         </div>
     );
 };
