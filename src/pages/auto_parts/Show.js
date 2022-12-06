@@ -31,7 +31,7 @@ const Show = (props) => {
     if(!auto_part) return "loading...";
     
     return (
-      <AutoDisplay key={auto_part._id} auto_part={auto_part}  callback={deleteCallback}/>
+      <AutoDisplay key={auto_part._id} auto_part={auto_part} authenticated={props.authenticated} callback={deleteCallback}/>
     );
 };
 export default Show;

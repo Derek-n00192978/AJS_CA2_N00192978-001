@@ -47,7 +47,7 @@ const Index = (props) => {
           </tr>
         </tbody>
       </Table>
-      <Table responsive="md">
+      {/*<Table responsive="md">
         <thead>
           <tr>
             <th>All Auto Centers</th>
@@ -70,7 +70,7 @@ const Index = (props) => {
             <td>{ auto_partsList }</td>
           </tr>
         </tbody>
-      </Table>
+    </Table>*/}
       </div>
             
         </>

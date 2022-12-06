@@ -138,7 +138,7 @@ const Create = () => {
                     <MenuItem value='Disel'>Disel</MenuItem>
                     <MenuItem value='Mild-Hybrid'>Mild-Hybrid</MenuItem>
                     <MenuItem value='Hybrid'>Hybrid</MenuItem>
-                    <MenuItem value='Full Electric'>Full electric</MenuItem>
+                    <MenuItem value='Fully Plud-in Electric'>Full electric</MenuItem>
                 </Select>
                 </FormControl>
             </div>
@@ -187,7 +187,7 @@ const Create = () => {
                     <MenuItem value='5 door hatchback'>5 Door Hatchbach</MenuItem>
                     <MenuItem value='5 door MPV'>5 Door MPV</MenuItem>
                     <MenuItem value='Sports'>Sports</MenuItem>
-                    <MenuItem value='Flappy Paddle'>Flappy Paddle</MenuItem>
+                    
                 </Select>
                 </FormControl>
             </div>
