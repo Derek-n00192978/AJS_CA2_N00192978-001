@@ -8,7 +8,7 @@ const Index = (props) => {
     const [ cars, setCars ] = useState(null);
     
     useEffect(() => {
-        axios.get('https://vercel.com/n00192978-iadtie/ca2-cars-api/api/cars')
+        axios.get('https://ca2-cars-api.vercel.app/api/cars')
              .then((response) =>{
                 console.log(response.data);
                 setCars(response.data)

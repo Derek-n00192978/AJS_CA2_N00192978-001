@@ -13,7 +13,7 @@ const Show = (props) => {
       navigate('/auto_parts');
   }
     useEffect(() => {
-    axios.get(`https://vercel.com/n00192978-iadtie/ca2-cars-api/api/auto_parts/${id}`, {
+    axios.get(`https://ca2-cars-api.vercel.app/api/auto_parts/${id}`, {
     headers: {
       "Authorization": `Bearer ${token}`
     }

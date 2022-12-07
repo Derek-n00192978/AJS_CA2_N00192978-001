@@ -28,7 +28,7 @@ const LoginForm = (props) => {
         console.log("Email", form.email);
         console.log("Password", form.password);
 
-        axios.post('https://vercel.com/n00192978-iadtie/ca2-cars-api/api/users/login', {
+        axios.post('https://ca2-cars-api.vercel.app/api/users/login', {
             fName: form.fName,
             email: form.email,
             password: form.password

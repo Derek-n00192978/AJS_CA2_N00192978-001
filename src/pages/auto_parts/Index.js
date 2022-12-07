@@ -8,7 +8,7 @@ import AutoCard from '../../components/AutoCard';
 const Index = (props) => {
     const [ auto_parts, setAuto_parts ] = useState(null);
     useEffect(() => {
-        axios.get('https://vercel.com/n00192978-iadtie/ca2-cars-api/api/auto_parts')
+        axios.get('https://ca2-cars-api.vercel.app/api/auto_parts')
              .then((response) =>{
                 console.log(response.data);
                 setAuto_parts(response.data);

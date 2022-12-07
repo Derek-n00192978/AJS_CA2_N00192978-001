@@ -33,7 +33,7 @@ const RegisterForm = () => {
         console.log("phone", form.phone);
         console.log("email", form.email);       
 
-        axios.post('https://vercel.com/n00192978-iadtie/ca2-cars-api/api/users/register', {
+        axios.post('https://ca2-cars-api.vercel.app/api/users/register', {
 
             fName: form.fName,
             lName: form.lName,

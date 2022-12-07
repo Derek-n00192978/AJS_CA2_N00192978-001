@@ -43,7 +43,7 @@ const Create = () => {
     const submitform = () => {
         if(!isRequired(['name', 'location', 'phone'])){
         let token = localStorage.getItem('token');
-        axios.post('https://vercel.com/n00192978-iadtie/ca2-cars-api/api/auto_parts', form, {
+        axios.post('https://ca2-cars-api.vercel.app/api/auto_parts', form, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }

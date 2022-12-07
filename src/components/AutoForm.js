@@ -44,7 +44,7 @@ const AutosForm = () => {
         console.log("image", form.image);
               
 
-        axios.post('https://vercel.com/n00192978-iadtie/ca2-cars-api/api/auto_parts', {
+        axios.post('http://ca2-cars-api.vercel.app/api/auto_parts', {
             name: form.name,
             location: form.location,
             phone: form.phone,

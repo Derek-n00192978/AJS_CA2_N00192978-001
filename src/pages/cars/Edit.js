@@ -67,8 +67,8 @@ const Edit = () => {
     };
     const submitform = () => {
         
-        if(!isRequired(['make', 'model', 'series', 'year', 'reg_plate', 'engine_cap', 'fuel', 'colour', 'transmission', 'body_type']))
-        axios.post('https://vercel.com/n00192978-iadtie/ca2-cars-api/api/cars', form, {
+        if(!isRequired(['make', 'model', 'series', 'year', 'reg_plate', 'engine_cap', 'fuel', 'colour', 'transmission', 'body_type', 'image_path']))
+        axios.put(`https://ca2-cars-api.vercel.app/api/cars/${_id}`, form, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
@@ -233,7 +233,7 @@ const Edit = () => {
                 </thead>
                 <tbody>
                     <tr>
-                        <input type="file" />
+                        <input type="file" name="image_path"/>
                     </tr>
                 </tbody>
             </Table>

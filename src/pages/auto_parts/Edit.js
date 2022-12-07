@@ -66,7 +66,7 @@ const Edit = () => {
 
     const submitForm = () => {
 
-        if(!isRequired(['name', 'location', 'phone', 'web_address'])){
+        if(!isRequired(['name', 'location', 'phone', 'web_address', 'image_path'])){
 
             axios.put(`/auto_parts/${id}`, form, {
                     headers: {
@@ -152,7 +152,7 @@ const Edit = () => {
                 </thead>
                 <tbody>
                     <tr>
-                        <input type="file" />
+                        <input type="file" name="image_path" />
                     </tr>
                 </tbody>
             </Table>
