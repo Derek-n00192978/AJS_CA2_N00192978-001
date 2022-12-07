@@ -14,11 +14,11 @@ const NavBar = (props) => {
         navigate('/')
     };
     const login = ()=> {
-        props.onAuthenticated(!true);
+        props.onAuthenticated(!false);
         navigate('/')
     };
     const register = ()=> {
-        props.onAuthenticated(!true);
+        props.onAuthenticated(!false);
         navigate('/')
     };
     const [anchorEl, setAnchorEl] = useState(null);
@@ -45,7 +45,8 @@ const NavBar = (props) => {
                     {(props.authenticated) ? (
                     <Button variant="outlined" onClick={login}>Login</Button>
                     ) : ""} |
-                    
+                    <Button component={Link} to='/login'>Login</Button>
+                    <Button component={Link} to='/register'>Register</Button>
                     {(props.authenticated) ? (
                     <Button variant="outlined" onClick={register}>Register</Button>
                     ) : ""} |
