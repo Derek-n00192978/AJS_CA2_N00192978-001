@@ -7,7 +7,7 @@ const DeleteBtn = (props) => {
     const onDelete = () => {
         let token = localStorage.getItem('token');
 
-        axios.delete(`/http://localhost:3001/api/${props.id}`, {
+        axios.delete(`https://vercel.com/n00192978-iadtie/ca2-cars-api/api/${props.id}`, {
                 headers: {
                     "Authorization": `Bearer ${token}`
                 }

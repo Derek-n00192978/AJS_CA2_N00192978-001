@@ -16,7 +16,7 @@ const Show = (props) => {
     };
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/api/cars/${id}`, {
+        axios.get(`https://vercel.com/n00192978-iadtie/ca2-cars-api/api/cars/${id}`, {
                 headers: {
                     "Authorization": `Bearer ${token}`
                 }
