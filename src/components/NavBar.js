@@ -43,11 +43,11 @@ const NavBar = (props) => {
           
             {/* Login and Register Button with logout if authenticated*/}
                     {(props.authenticated) ? (
-                    <Button variant="outlined" onClick={login}>Login</Button>
+                    <Button variant="outlined" onClick={!login}>Login</Button>
                     ) : ""} |
                     
                     {(props.authenticated) ? (
-                    <Button variant="outlined" onClick={register}>Register</Button>
+                    <Button variant="outlined" onClick={!register}>Register</Button>
                     ) : ""} |
                     
                     {(props.authenticated) ? (
