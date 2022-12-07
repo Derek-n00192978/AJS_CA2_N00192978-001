@@ -13,14 +13,7 @@ const NavBar = (props) => {
         props.onAuthenticated(false);
         navigate('/')
     };
-    const login = ()=> {
-        props.onAuthenticated(!false);
-        navigate('/')
-    };
-    const register = ()=> {
-        props.onAuthenticated(!false);
-        navigate('/')
-    };
+   
     const [anchorEl, setAnchorEl] = useState(null);
     const [anchorEl1, setAnchorEl1] = useState(null);
     const open = Boolean(anchorEl);
@@ -42,14 +35,11 @@ const NavBar = (props) => {
             <Button component={Link} to='/'></Button>
           
             {/* Login and Register Button with logout if authenticated*/}
-                    {(props.authenticated) ? (
-                    <Button variant="outlined" onClick={login}>Login</Button>
-                    ) : ""} |
-                    <Button component={Link} to='/login'>Login</Button>
-                    <Button component={Link} to='/register'>Register</Button>
-                    {(props.authenticated) ? (
-                    <Button variant="outlined" onClick={register}>Register</Button>
-                    ) : ""} |
+                   
+                    <Button component={Link} to='/login'>Login</Button>|
+                    <Button component={Link} to='/register'>Register</Button>|
+                    
+                   
                     
                     {(props.authenticated) ? (
                         <Button variant="outlined" onClick={logout}>Logout</Button>
