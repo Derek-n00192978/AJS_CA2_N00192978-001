@@ -68,7 +68,7 @@ const Edit = () => {
     const submitform = () => {
         
         if(!isRequired(['make', 'model', 'series', 'year', 'reg_plate', 'engine_cap', 'fuel', 'colour', 'transmission', 'body_type', 'image_path']))
-        axios.put(`https://ca2-cars-api.vercel.app/api/cars/${_id}`, form, {
+        axios.put(`https://ca2-cars-api.vercel.app/api/cars/${id}`, form, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
