@@ -14,11 +14,11 @@ const NavBar = (props) => {
         navigate('/')
     };
     const login = ()=> {
-        props.onAuthenticated(false);
+        props.onAuthenticated(true);
         navigate('/')
     };
     const register = ()=> {
-        props.onAuthenticated(false);
+        props.onAuthenticated(true);
         navigate('/')
     };
     const [anchorEl, setAnchorEl] = useState(null);
