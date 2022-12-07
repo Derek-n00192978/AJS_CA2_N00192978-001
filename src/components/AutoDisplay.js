@@ -21,7 +21,7 @@ const AutoDisplay = (props) => {
     
     return (
         <div>
-            <Card.Header><b>{name}</b></Card.Header>
+            <Card.Header><b>{props.auto_part.name}</b></Card.Header>
                 <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={`${props.auto_part.image_path}`} name={image} />
             <Card.Body>

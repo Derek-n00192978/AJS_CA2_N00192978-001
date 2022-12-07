@@ -8,6 +8,7 @@ import FormControl from "@mui/material/FormControl";
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button'; 
+import Table from 'react-bootstrap/Table';
 
 
 
@@ -224,6 +225,18 @@ const Edit = () => {
                 </Select>
                 </FormControl>
             </div>
+            <Table responsive="sm">
+                <thead>
+                    <tr>
+                        <th>Image Selector for Image Upload</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <input type="file" />
+                    </tr>
+                </tbody>
+            </Table>
             <Button onClick={submitform}variant="contained">Submit</Button>
         </>
     );

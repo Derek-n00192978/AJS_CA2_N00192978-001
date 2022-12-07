@@ -35,7 +35,7 @@ const CarDisplay = (props) => {
         <div>
             {/*react bootstrap catd */}
             <Card style={{ width: '18rem' }}>
-            <Card.Header text-align="center">{props.car.make}</Card.Header>
+            <Card.Header text-align="center">{props.car.make}-{props.car.model}-{props.car.series}</Card.Header>
                 <Card.Img variant="top" src={`${props.car.image_path}`} />
             <Card.Body>
                 <Card.Title><p><b>Make:</b>{props.car.make} <b>Model:</b>{props.car.model} <b>Series:</b>{props.car.series}</p></Card.Title>
@@ -45,7 +45,7 @@ const CarDisplay = (props) => {
                 <p><b>Colour:</b>{props.car.colour} <b>Transmission:</b>{props.car.transmission}</p>
                 <p></p>
                 <p><b>Body Type:</b>{props.car.body_type}</p>
-                <p><b>Image</b>{props.car.image_path}</p>
+                
                 
                 </Card.Text>
                 <Button 

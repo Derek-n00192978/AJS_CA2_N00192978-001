@@ -14,17 +14,15 @@ const CarCard = (props) => {
             }
     return (
         <div>
-        
-        <Card style={{ width: '18rem' }}>
-      <Card.Body>
-        <Card.Title>{make}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">{model}</Card.Subtitle>
-        <Card.Text>{series}</Card.Text>
-        </Card.Body>
-    </Card>
-            
-        <hr />
-    </div>
+            <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                    <Card.Title>{make}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">{model}</Card.Subtitle>
+                    <Card.Text>{series}</Card.Text>
+                </Card.Body>
+            </Card>
+            <br></br>
+        </div>
     )
 };
 export default CarCard;

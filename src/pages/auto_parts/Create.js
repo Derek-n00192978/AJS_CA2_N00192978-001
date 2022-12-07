@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import TextField  from "@mui/material/TextField";
 import Button from '@mui/material/Button'; 
+import Table from 'react-bootstrap/Table';
+
 //import FormHelperText from '@mui/material/FormHelperText';
 
 
@@ -99,6 +101,18 @@ const Create = () => {
                 helperText={errors.web_address?.message}/>
             </div>
           
+            <Table responsive="sm">
+                <thead>
+                    <tr>
+                        <th>Image Selector for Image Upload</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <input type="file" />
+                    </tr>
+                </tbody>
+            </Table>
             <Button onClick={submitform}variant="contained">Submit</Button>
         </>
     );

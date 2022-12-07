@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import Table from 'react-bootstrap/Table';
 
 import CarCard from '../../components/CarCard';
 
@@ -32,8 +33,18 @@ const Index = (props) => {
     });
     return (
         <>
-        <h2>Cars</h2>
-        { carsList}
+        <Table responsive="sm">
+            <thead>
+                <tr>
+                    <th>All Cars from Database</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{ carsList }</td>
+                </tr>
+            </tbody>
+        </Table>
         </>
     );
    

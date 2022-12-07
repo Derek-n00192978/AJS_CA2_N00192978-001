@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect} from 'react';
-
 import Table from 'react-bootstrap/Table';
+
 
 import AutoCard from '../../components/AutoCard';
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import TextField from '@mui/material/Textfield';
 //import InputLabel from '@mui/material/InputLabel';
 //import Select from '@mui/material/Select';
@@ -8,7 +8,7 @@ import TextField from '@mui/material/Textfield';
 //import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 //import FormHelperText from '@mui/material/FormHelperText';
-import { useParams } from 'react-router-dom';
+import Table from 'react-bootstrap/Table';
 
 const Edit = () => {
     const [ auto_part, setAuto_part] = useState(null);
@@ -144,7 +144,18 @@ const Edit = () => {
                     defaultValue={form.web_address}
                 />
             </div>
-
+            <Table responsive="sm">
+                <thead>
+                    <tr>
+                        <th>Image Selector for Image Upload</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <input type="file" />
+                    </tr>
+                </tbody>
+            </Table>
             <Button onClick={submitForm} variant='contained'>Submit</Button>
         </>
     );

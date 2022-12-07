@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 
 //import EditIcon from '@mui/icons-material/Edit';
 
@@ -16,11 +17,13 @@ const AutoCard = (props) => {
     }
     return (
         <div>
-            {name} 
-            {location}
-           
-              
-            <hr />
+            <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                    <Card.Title>{name}</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">{location}</Card.Subtitle>
+                </Card.Body>
+            </Card>
+            <br></br>
         </div>
     )
 };
