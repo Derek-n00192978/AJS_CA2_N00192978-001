@@ -46,8 +46,7 @@ const NavBar = (props) => {
           
             {/* Login and Register Button with logout if authenticated*/}
                    
-                    <Button component={Link} to='/login'>Login</Button>|
-                    <Button component={Link} to='/register'>Register</Button>|
+                
                     {(props.authenticated) ? (
                         <Button variant="outlined" onClick={login}></Button>
                     ) : "Login"}
