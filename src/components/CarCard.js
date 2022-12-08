@@ -3,8 +3,8 @@ import Card from 'react-bootstrap/Card';
 
 const CarCard = (props) => {
     let make = <p><b>Make:</b> {props.car.make}</p>
-    let model = <p></p>
-    let series = <p></p>
+    let model = <p><b>Model:</b>{props.car.model}</p>
+    let series = <p><b>Series:</b>{props.car.series}</p>
 
 
     if(props.authenticated){
