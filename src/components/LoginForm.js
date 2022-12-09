@@ -50,14 +50,29 @@ const LoginForm = (props) => {
         <>
             <b>Login Here:</b>
             <br />
-            fName: <input type="text" name="fName" value={form.fName} onChange={handleForm}/>
-            <br />
-            Email: <input type="text" name="email" value={form.email} onChange={handleForm}/>
-            <br />
-            Password: <input type="text" name="password" value={form.password} onChange={handleForm} />
-            <br />
+           
+            <form>
+            <div class="form-group">
+                <label for="fName">First Name</label>
+                <input type="text" name="fName" value={form.fName} onChange={handleForm} />
+                <small id="firstHelp" class="form-text text-muted">We'll never share your First Name with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="text" name="email" value={form.email} onChange={handleForm} />
+                <small id="emailHelp" class="form-text text-muted">We'll never share your Email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="text" name="password" value={form.password} onChange={handleForm} />
+                <small id="passHelp" class="form-text text-muted">We'll never share your Password with anyone else.</small>
+            </div>
+          
+          
             <button onClick={submitForm}>Submit</button>
             <p style={styles}>{errorMessage}</p>
+           
+            </form> 
         </>
     );
 };
