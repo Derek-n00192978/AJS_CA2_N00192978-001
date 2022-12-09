@@ -42,7 +42,7 @@ const NavBar = (props) => {
     };
     return (        
         <Grid item xs={12}>
-            <Button component={Link} to='/'></Button>
+            <Button component={Link} to='/'>Home</Button>
           
             {/* Login and Register Button with logout if authenticated*
                    

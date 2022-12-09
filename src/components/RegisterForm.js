@@ -59,16 +59,31 @@ const RegisterForm = () => {
     return (
         <>
         <form>
-            <Card style={{ width: '18rem' }}>
-                <Card.Body>
-                    <Card.Title><b>Register Here:</b></Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">fName: <input type="text" name="fName" value={form.fName} onChange={handleForm} /></Card.Subtitle>
-                        <Card.Subtitle className="mb-2 text-muted">lNname: <input type="text" name="lName" value={form.lName} onChange={handleForm} /></Card.Subtitle>
-                        <Card.Subtitle className="mb-2 text-muted">Password: <input type="text" name="password" value={form.password} onChange={handleForm} /></Card.Subtitle>
-                        <Card.Subtitle className="mb-2 text-muted">Phone: <input type="text" name="phone" value={form.phone} onChange={handleForm} /></Card.Subtitle>
-                        <Card.Subtitle className="mb-2 text-muted">Email: <input type="text" name="email" value={form.email} onChange={handleForm}/></Card.Subtitle>
-                </Card.Body>
-            </Card>
+            <div class="form-group">
+                <label for="fName">First Name</label>
+                <input type="text" name="fName" value={form.fName} onChange={handleForm} />
+                <small id="firstHelp" class="form-text text-muted">We'll never share your First Name with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="lName">Last Name</label>
+                <input type="text" name="lName" value={form.lName} onChange={handleForm} />
+                <small id="lastHelp" class="form-text text-muted">We'll never share your Last Name with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="text" name="password" value={form.password} onChange={handleForm} />
+                <small id="passHelp" class="form-text text-muted">We'll never share your Password with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="Phone">Phone</label>
+                <input type="text" name="phone" value={form.phone} onChange={handleForm} />
+                <small id="phoneHelp" class="form-text text-muted">We'll never share your Phone details with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="text" name="email" value={form.email} onChange={handleForm} />
+                <small id="emailHelp" class="form-text text-muted">We'll never share your Email with anyone else.</small>
+            </div>
             <button onClick={submitForm}>Submit</button>
             <p style={styles}>{errorMessage}</p>
            
