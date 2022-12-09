@@ -15,6 +15,8 @@ const Home = (props) => {
             <h4>You are logged in to the web application ---- Enjoy</h4>
             </div>
         )} 
+        <hr></hr>
+        <hr></hr>
         {(!props.authenticated) ? (
             <RegisterForm onAuthenticated={props.onAuthenticated}/>
         ): (
