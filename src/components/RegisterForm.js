@@ -59,21 +59,19 @@ const RegisterForm = () => {
     return (
         <>
         <form>
-            <b>Register Here:</b>
-            <br />
-            fName: <input type="text" name="fName" value={form.fName} onChange={handleForm} />
-            <br />
-            lNname: <input type="text" name="lName" value={form.lName} onChange={handleForm} />
-            <br />
-            Password: <input type="text" name="password" value={form.password} onChange={handleForm} />
-            <br />
-            Phone: <input type="text" name="phone" value={form.phone} onChange={handleForm} />
-            <br />
-            Email: <input type="text" name="email" value={form.email} onChange={handleForm}/>
-            <br />
-            
+            <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                    <Card.Title><b>Register Here:</b></Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">fName: <input type="text" name="fName" value={form.fName} onChange={handleForm} /></Card.Subtitle>
+                        <Card.Subtitle className="mb-2 text-muted">lNname: <input type="text" name="lName" value={form.lName} onChange={handleForm} /></Card.Subtitle>
+                        <Card.Subtitle className="mb-2 text-muted">Password: <input type="text" name="password" value={form.password} onChange={handleForm} /></Card.Subtitle>
+                        <Card.Subtitle className="mb-2 text-muted">Phone: <input type="text" name="phone" value={form.phone} onChange={handleForm} /></Card.Subtitle>
+                        <Card.Subtitle className="mb-2 text-muted">Email: <input type="text" name="email" value={form.email} onChange={handleForm}/></Card.Subtitle>
+                </Card.Body>
+            </Card>
             <button onClick={submitForm}>Submit</button>
             <p style={styles}>{errorMessage}</p>
+           
             </form>    
         </>
     );

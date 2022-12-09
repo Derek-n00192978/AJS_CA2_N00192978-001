@@ -44,7 +44,7 @@ const NavBar = (props) => {
         <Grid item xs={12}>
             <Button component={Link} to='/'></Button>
           
-            {/* Login and Register Button with logout if authenticated*/}
+            {/* Login and Register Button with logout if authenticated*
                    
                 
                     {(props.authenticated) ? (
@@ -52,9 +52,10 @@ const NavBar = (props) => {
                     ) : "Login"}
                     {(props.authenticated) ? (
                         <Button variant="outlined" onClick={register}></Button>
-                    ) : "Register"}
+                    ) : "Register"} 
                    
-                    
+                    */}
+
                     {(props.authenticated) ? (
                         <Button variant="outlined" onClick={logout}>Logout</Button>
                     ) : ""} 
