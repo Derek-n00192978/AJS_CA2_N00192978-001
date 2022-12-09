@@ -53,17 +53,17 @@ const LoginForm = (props) => {
            
             <form>
             <div class="form-group">
-                <label for="fName">First Name</label>
+                <label for="fName">First Name:</label>
                 <input type="text" name="fName" value={form.fName} onChange={handleForm} />
                 <small id="firstHelp" class="form-text text-muted">We'll never share your First Name with anyone else.</small>
             </div>
             <div class="form-group">
-                <label for="Email">Email</label>
+                <label for="Email">Email:</label>
                 <input type="text" name="email" value={form.email} onChange={handleForm} />
                 <small id="emailHelp" class="form-text text-muted">We'll never share your Email with anyone else.</small>
             </div>
             <div class="form-group">
-                <label for="Password">Password</label>
+                <label for="Password">Password:</label>
                 <input type="text" name="password" value={form.password} onChange={handleForm} />
                 <small id="passHelp" class="form-text text-muted">We'll never share your Password with anyone else.</small>
             </div>

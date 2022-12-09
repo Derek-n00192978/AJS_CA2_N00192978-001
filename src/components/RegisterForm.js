@@ -58,29 +58,32 @@ const RegisterForm = () => {
     
     return (
         <>
+        <b>Register Here before Loggin in, -- if you have not regestered before-- do so now:</b>
+        <p></p>
+            <br />
         <form>
             <div class="form-group">
-                <label for="fName">First Name</label>
+                <label for="fName">First Name:</label>
                 <input type="text" name="fName" value={form.fName} onChange={handleForm} />
                 <small id="firstHelp" class="form-text text-muted">We'll never share your First Name with anyone else.</small>
             </div>
             <div class="form-group">
-                <label for="lName">Last Name</label>
+                <label for="lName">Last Name:</label>
                 <input type="text" name="lName" value={form.lName} onChange={handleForm} />
                 <small id="lastHelp" class="form-text text-muted">We'll never share your Last Name with anyone else.</small>
             </div>
             <div class="form-group">
-                <label for="Password">Password</label>
+                <label for="Password">Password:</label>
                 <input type="text" name="password" value={form.password} onChange={handleForm} />
                 <small id="passHelp" class="form-text text-muted">We'll never share your Password with anyone else.</small>
             </div>
             <div class="form-group">
-                <label for="Phone">Phone</label>
+                <label for="Phone">Phone:</label>
                 <input type="text" name="phone" value={form.phone} onChange={handleForm} />
                 <small id="phoneHelp" class="form-text text-muted">We'll never share your Phone details with anyone else.</small>
             </div>
             <div class="form-group">
-                <label for="Email">Email</label>
+                <label for="Email">Email:</label>
                 <input type="text" name="email" value={form.email} onChange={handleForm} />
                 <small id="emailHelp" class="form-text text-muted">We'll never share your Email with anyone else.</small>
             </div>

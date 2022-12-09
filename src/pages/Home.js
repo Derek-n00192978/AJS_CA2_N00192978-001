@@ -17,6 +17,7 @@ const Home = (props) => {
         )} 
         <hr></hr>
         <hr></hr>
+        <h4>Register form below -- only use if you have not done so before.</h4>
         {(!props.authenticated) ? (
             <RegisterForm onAuthenticated={props.onAuthenticated}/>
         ): (
