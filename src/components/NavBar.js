@@ -14,10 +14,10 @@ const NavBar = (props) => {
         navigate('/')
     };
 
-    const login = ()=> {
+    {/*const login = ()=> {
         props.onAuthenticated(false);
         navigate('/login')
-    };
+    };*/}
 
     const register = ()=> {
         props.onAuthenticated(false);
