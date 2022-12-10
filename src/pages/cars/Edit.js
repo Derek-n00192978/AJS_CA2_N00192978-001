@@ -95,7 +95,6 @@ const Edit = () => {
                 onChange={handleForm}
                 error={errors.make}
                 value={form.make}
-                
                 /> 
             </div>
             <div className='form-group'>
@@ -106,7 +105,6 @@ const Edit = () => {
                 onChange={handleForm}
                 error={errors.model}
                 value={form.model}
-                
                 /> 
             </div>
             <div className='form-group'>
@@ -117,7 +115,6 @@ const Edit = () => {
                 onChange={handleForm}
                 error={errors.series}
                 value={form.series}
-                
                 /> 
             </div>
             <div className='form-group'>
@@ -128,7 +125,6 @@ const Edit = () => {
                 onChange={handleForm}
                 error={errors.year}
                 value={form.year}
-                
                 /> 
             </div>
             <div className='form-group'>
@@ -139,7 +135,6 @@ const Edit = () => {
                 onChange={handleForm}
                 error={errors.reg_plate}
                 value={form.reg_plate}
-                
                 /> 
             </div>
             <div className='form-group'>
@@ -150,7 +145,6 @@ const Edit = () => {
                 onChange={handleForm}
                 error={errors.engine_cap}
                 value={form.engine_cap}
-                
                 /> 
             </div>
             <div className="form-group">
@@ -163,7 +157,6 @@ const Edit = () => {
                     onChange={handleForm}
                     error={errors.fuel}
                     value={form.fuel}
-                    
                     >
                     <MenuItem value='Petrol'>Petrol</MenuItem>
                     <MenuItem value='Disel'>Disel</MenuItem>
@@ -181,7 +174,6 @@ const Edit = () => {
                 onChange={handleForm}
                 error={errors.colour}
                 value={form.colour}
-                
                 /> 
             </div>
             <div className="form-group">
@@ -194,7 +186,6 @@ const Edit = () => {
                     onChange={handleForm}
                     error={errors.transmission}
                     value={form.transmission}
-                    
                     >
                     <MenuItem value='Manual'>Manual</MenuItem>
                     <MenuItem value='Automatic'>Automatic</MenuItem>
@@ -212,7 +203,6 @@ const Edit = () => {
                     onChange={handleForm}
                     error={errors.body_type}
                     value={form.body_type}
-                    
                     >
                     <MenuItem value='2 door saloon'>2 Door Saloon</MenuItem>
                     <MenuItem value='4 door saloon'>4 Door Saloon</MenuItem>

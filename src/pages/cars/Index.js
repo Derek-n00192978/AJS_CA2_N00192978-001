@@ -33,18 +33,18 @@ const Index = (props) => {
     });
     return (
         <>
-        <Table responsive="sm">
-            <thead>
-                <tr>
-                    <th>All Cars from Database</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{ carsList }</td>
-                </tr>
-            </tbody>
-        </Table>
+            <Table responsive="sm">
+                <thead>
+                    <tr>
+                        <th>All Cars from Database</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{ carsList }</td>
+                    </tr>
+                </tbody>
+            </Table>
         </>
     );
    

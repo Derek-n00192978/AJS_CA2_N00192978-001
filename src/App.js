@@ -67,7 +67,7 @@ const App = () => {
   return (
     <Router>
       <Container maxWidth="md">
-            <NavBar onAuthenticated={onAuthenticated} authenticated={authenticated}/>
+          <NavBar onAuthenticated={onAuthenticated} authenticated={authenticated}/>
             <Routes>
                 <Route path="/" element={<Home onAuthenticated={onAuthenticated} authenticated={authenticated} />} /> 
                 <Route path="/about" element={<About/>} />
@@ -82,9 +82,9 @@ const App = () => {
                 {/*Different route */}
                 <Route path='*' element={<PageNotFound/>} />
             </Routes>
-            <Footer />
-          </Container>  
-        </Router> 
+          <Footer />
+      </Container>  
+    </Router> 
   )
 }
 /* exporting the App */

@@ -59,7 +59,7 @@ const RegisterForm = () => {
     return (
         <>
         <b>Register Here before Loggin in, -- if you have not regestered before-- do so now:</b>
-        <p></p>
+        
             <br />
         <form>
             <div class="form-group">
